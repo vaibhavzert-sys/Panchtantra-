@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<title>Panchatantra — The Art of Being Wise | Visual Edition</title>
+<style>
+:root{--bg:#08101d;--panel:#101a2a;--card:#142033;--ink:#f5f1e7;--muted:#aeb8c7;--gold:#e6b85c;--gold2:#ffd77a;--green:#62c596;--red:#e56d65;--blue:#6ea8ff;--line:#26354a}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button{font:inherit}.app{min-height:100vh;background:radial-gradient(circle at 50% 0,#1a2b42 0,#0b1320 38%,#070d17 100%)}
+.top{position:sticky;top:0;z-index:20;background:rgba(8,16,29,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1080px;margin:auto;padding:12px 16px;display:flex;align-items:center;gap:12px}.brand{font-weight:900;letter-spacing:.2px}.spacer{flex:1}
+.pill{border:1px solid var(--line);background:#0d1726;color:var(--muted);border-radius:999px;padding:8px 11px;font-size:13px}
+main{max-width:1080px;margin:auto;padding:22px 16px 48px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}.heroCopy{padding:28px 4px}.eyebrow{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}.hero h1{font-family:Georgia,serif;font-size:clamp(40px,7vw,78px);line-height:.92;margin:12px 0 16px}.hero p{color:var(--muted);font-size:18px;line-height:1.55;max-width:650px}
+.btn{border:1px solid var(--line);background:#152238;color:var(--ink);border-radius:13px;padding:12px 16px;font-weight:800;cursor:pointer}.btn.primary{background:var(--gold);color:#17120a;border-color:var(--gold2)}.btn:active{transform:translateY(1px)}
+.mural{min-height:310px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(180deg,#1d3045,#0e1826);position:relative;overflow:hidden;box-shadow:0 22px 70px #0005}.sun{position:absolute;width:100px;height:100px;border-radius:50%;background:#ffd77a;right:12%;top:12%;box-shadow:0 0 60px #ffd77a55}.mount{position:absolute;bottom:0;width:0;height:0;border-left:170px solid transparent;border-right:170px solid transparent;border-bottom:220px solid #15283a}.m1{left:-70px}.m2{right:-80px;border-bottom-color:#1b3445}.ground{position:absolute;bottom:0;left:0;right:0;height:90px;background:#0c1c20;border-top:1px solid #27413c}.tree{position:absolute;bottom:58px;width:18px;height:125px;background:#513d2c;border-radius:10px}.tree:before,.tree:after{content:"";position:absolute;background:#315a46;border-radius:50%}.tree:before{width:80px;height:80px;left:-32px;top:-45px}.tree:after{width:65px;height:65px;left:5px;top:-70px}.t1{left:16%}.t2{right:18%;transform:scale(.8)}.animal{position:absolute;bottom:65px;font-size:72px;filter:drop-shadow(0 12px 8px #0007)}.a1{left:27%}.a2{right:28%;font-size:60px}
+.sectionTitle{margin:36px 0 14px;font-size:25px}.books{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.book{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;min-height:132px;cursor:pointer;transition:.18s}.book:hover{transform:translateY(-2px);border-color:#3a506d}.book .num{color:var(--gold);font-weight:900;font-size:12px}.book h3{margin:8px 0 6px;font-size:16px}.book p{margin:0;color:var(--muted);font-size:12px;line-height:1.4}
+.storyList{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.storyCard{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;cursor:pointer}.thumb{width:82px;height:64px;border-radius:14px;background:linear-gradient(135deg,#203a52,#0d1725);display:grid;place-items:center;font-size:34px;flex:none}.storyCard h3{margin:0 0 5px;font-size:15px}.storyCard p{margin:0;color:var(--muted);font-size:12px}.lock{margin-left:auto;color:#647287}
+.game{display:none}.game.active{display:block}.home.hidden{display:none}
+.gameTop{display:flex;gap:10px;align-items:center;margin-bottom:14px}.gameTop .progress{flex:1;height:9px;background:#1b2839;border-radius:999px;overflow:hidden}.gameTop .progress i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#f5d68d);width:0}
+.scene{border:1px solid var(--line);border-radius:26px;overflow:hidden;background:#0e1826}.sceneArt{height:360px;position:relative;background:linear-gradient(180deg,#284763 0,#172c3d 58%,#0f251f 100%);overflow:hidden}.sceneArt .moon{position:absolute;width:72px;height:72px;background:#ffe8a8;border-radius:50%;right:10%;top:10%;box-shadow:0 0 45px #ffe8a855}.sceneArt .hill{position:absolute;bottom:0;width:0;height:0;border-left:240px solid transparent;border-right:240px solid transparent;border-bottom:230px solid #183243}.sceneArt .hill.h2{right:-120px;border-bottom-color:#1a3a37}.sceneArt .water{position:absolute;left:0;right:0;bottom:0;height:95px;background:repeating-linear-gradient(180deg,#1c5260 0 3px,#173f4b 3px 8px)}
+.figure{position:absolute;bottom:80px;font-size:94px;filter:drop-shadow(0 16px 10px #0008);transition:.35s}.f1{left:18%}.f2{right:18%;font-size:82px}.prop{position:absolute;bottom:83px;left:48%;font-size:55px;transition:.4s}
+.sceneText{padding:20px}.sceneText .tag{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase}.sceneText h2{font-family:Georgia,serif;font-size:34px;margin:7px 0}.sceneText .setup{color:#cbd4df;line-height:1.55;font-size:16px;max-width:780px}.choiceTitle{font-size:19px;font-weight:900;margin:22px 0 10px}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.choice{min-height:88px;text-align:left;background:#152133;border:1px solid #2b3b51;color:var(--ink);border-radius:16px;padding:14px;cursor:pointer}.choice b{display:block;margin-bottom:6px}.choice span{color:var(--muted);font-size:13px;line-height:1.35}.choice.good{border-color:#4e9c78}.choice.bad{border-color:#a85450}.result{margin-top:14px;padding:16px;border-radius:16px;background:#0b1421;border:1px solid var(--line);display:none}.result.show{display:block}.result strong{display:block;font-size:17px;margin-bottom:5px}.result p{margin:0;color:#c5ced9;line-height:1.5}.continue{margin-top:12px;display:none}.continue.show{display:inline-flex}
+.hud{display:flex;gap:8px;flex-wrap:wrap}.hud .pill b{color:var(--ink)}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.books{grid-template-columns:repeat(2,1fr)}.storyList{grid-template-columns:1fr}.choices{grid-template-columns:1fr}.sceneArt{height:300px}.animal{font-size:58px}.a2{font-size:50px}}
+@media(max-width:430px){main{padding:16px 12px 40px}.hero h1{font-size:48px}.books{grid-template-columns:1fr 1fr}.book{min-height:120px;padding:13px}.heroCopy{padding:14px 2px}.mural{min-height:260px}.sceneText h2{font-size:29px}.sceneArt{height:260px}.figure{font-size:68px}.f2{font-size:58px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><nav class="nav"><div class="brand">🌿 Panchatantra</div><div class="spacer"></div><div class="hud"><span class="pill">Wisdom <b id="wisdom">0</b></span><span class="pill">Stories <b id="done">0</b></span></div></nav></header>
+
+<main>
+<section class="home" id="home">
+<div class="hero">
+<div class="heroCopy">
+<div class="eyebrow">The Art of Being Wise · Visual Edition</div>
+<h1>See the choice.<br>Feel the consequence.</h1>
+<p>A visual-first Panchatantra adventure. Watch characters act, make decisions yourself, and discover the wisdom through consequences instead of long quizzes.</p>
+<button class="btn primary" id="start">Begin the journey →</button>
+</div>
+<div class="mural" aria-label="Illustrated forest scene">
+<div class="sun"></div><div class="mount m1"></div><div class="mount m2"></div><div class="ground"></div><div class="tree t1"></div><div class="tree t2"></div><div class="animal a1">🦁</div><div class="animal a2">🦊</div>
+</div>
+</div>
+<h2 class="sectionTitle">Five Books of Wisdom</h2>
+<div class="books" id="books"></div>
+<h2 class="sectionTitle">Playable Stories</h2>
+<div class="storyList" id="storyList"></div>
+</section>
+
+<section class="game" id="game">
+<div class="gameTop"><button class="btn" id="back">← Library</button><div class="progress"><i id="bar"></i></div><span class="pill" id="counter">1 / 25</span></div>
+<div class="scene">
+<div class="sceneArt" id="art">
+<div class="moon"></div><div class="hill"></div><div class="hill h2"></div><div class="water"></div>
+<div class="figure f1" id="char1">🐒</div><div class="figure f2" id="char2">🦁</div><div class="prop" id="prop">🪵</div>
+</div>
+<div class="sceneText">
+<div class="tag" id="bookTag"></div>
+<h2 id="storyTitle"></h2>
+<p class="setup" id="setup"></p>
+<div class="choiceTitle" id="choiceTitle">What will you do?</div>
+<div class="choices" id="choices"></div>
+<div class="result" id="result"><strong id="resultTitle"></strong><p id="resultText"></p><button class="btn primary continue" id="continue">Continue →</button></div>
+</div>
+</div>
+</section>
+</main>
+</div>
+
+<script>
+const books=[
+{id:1,name:"The Loss of Friends",icon:"🦁",desc:"Friendship, trust, jealousy and manipulation."},
+{id:2,name:"The Gaining of Friends",icon:"🐢",desc:"Cooperation, loyalty and the strength of unlikely allies."},
+{id:3,name:"Crows and Owls",icon:"🦉",desc:"Conflict, intelligence, strategy and patience."},
+{id:4,name:"Loss of Gains",icon:"🐊",desc:"Risk, greed, recovery and knowing when to retreat."},
+{id:5,name:"Ill-Considered Actions",icon:"🐒",desc:"Judgment, impulse, foresight and unintended consequences."}
+];
+
+const stories=[
+["The Lion and the Bull",1,"🦁","🐂","🪵","A powerful lion and a bull become friends. A jealous schemer begins feeding the lion a frightening story about his friend.","Pause and verify the rumor","A rumor can be louder than truth, but it is not evidence.","Trust the rumor","The lion reacts to fear instead of facts. A friendship is damaged before either side understands what happened.","Ask the schemer for proof","The story changes when evidence is demanded. Manipulation loses power when claims are tested."],
+["The Monkey and the Crocodile",1,"🐒","🐊","🍎","A monkey befriends a crocodile and shares fruit. The crocodile's household demands the monkey's heart.","Go with the crocodile without asking why","The monkey walks into danger without testing the situation.","Stay calm and look for a way back","The monkey notices the trap and uses presence of mind to escape.","Fight immediately","Force may turn a difficult situation into a worse one. A clever exit can beat raw strength."],
+["The Blue Jackal",1,"🦊","🐺","🎨","A jackal accidentally falls into blue dye and returns to the forest looking strange. The animals mistake his color for greatness.","Declare yourself king","The jackal gains power quickly, but a false identity depends on keeping the disguise.","Tell the truth","Honesty ends the performance before the deception grows.","Use the disguise forever","The disguise works only while nobody hears the jackal's true voice."],
+["The Wedge-Pulling Monkey",5,"🐒","👷","🪵","Workers leave a wooden wedge in a split log. A curious monkey notices it and moves closer.","Pull the wedge immediately","Curiosity becomes dangerous when the situation is not understood.","Watch and understand the setup first","Observation reveals that the wedge is holding the split safely in place.","Ask another monkey to pull it","Delegating an unsafe action does not make it wise."],
+["The Crows and the Snake",1,"🐦","🐍","🥚","A snake repeatedly steals eggs from a crow family. Direct attacks fail because the snake is stronger.","Attack the snake alone","Courage without a workable plan keeps repeating the same loss.","Use an indirect strategy","The crows seek a solution that changes the balance instead of fighting strength with strength.","Give up the nest","Abandoning the problem protects the present moment but leaves the danger unchanged."],
+
+["The Tortoise and the Geese",2,"🐢","🪿","🪵","A tortoise is carried to a new home by two geese. The plan works only if the tortoise stays silent.","Speak while flying","One impulsive sentence can destroy a carefully designed escape.","Stay silent","Restraint keeps the plan intact and carries the tortoise safely onward.","Argue with the crowd below","Attention is not always worth answering."],
+["The Four Friends",2,"🦌","🐢","🪤","A deer, tortoise, crow and mouse face different dangers. Alone, each has a weakness.","Solve every problem alone","Individual effort is limited when the problem requires different strengths.","Combine your strengths","Each friend contributes a different ability, turning several weaknesses into one strong team.","Wait for the strongest friend","A team works best when everyone contributes, not when one member carries everything."],
+["The Lion's Skin",2,"🦁","🫏","🌾","A donkey finds a lion skin and frightens villagers. The disguise works until his own voice gives him away.","Keep pretending and stay silent","The disguise has value only while the hidden weakness remains hidden.","Remember that appearance is not ability","A convincing appearance cannot replace the skill behind it.","Bray loudly","The disguise collapses the moment the true nature is revealed."],
+["The Heron and the Crab",2,"🦀","🐦","🐟","A heron claims he can save fish from a drying pond by carrying them elsewhere. A crab suspects the story.","Believe the helpful story","A comforting promise can hide a selfish motive.","Inspect where the fish are going","Following the chain of consequences exposes the hidden incentive.","Offer more fish","Rewarding an unverified helper increases the risk."],
+["The Mouse and the Lion",2,"🐭","🦁","🪢","A small mouse once helps a lion. Later the lion is trapped in a net.","Ignore the mouse","Small allies can possess exactly the ability you need later.","Remember every genuine ally","The mouse's size is irrelevant when its skill matches the problem.","Wait for another lion","Strength is not always the right tool."],
+
+["The Crows and Owls",3,"🐦","🦉","🌙","A long conflict between crows and owls makes every decision dangerous. One side considers using deception.","React immediately","Fast retaliation can reveal your plan before it is ready.","Study the enemy first","Good strategy begins by understanding incentives, habits and vulnerabilities.","Copy the enemy's last move","Imitation is not strategy when the circumstances differ."],
+["The Clever Crow",3,"🐦","🦊","🏺","A thirsty crow finds a pot with water too low to reach.","Give up","A blocked path can sometimes be changed rather than accepted.","Change the conditions","The crow uses stones to raise the water level until it can drink.","Break the pot","Force destroys the resource instead of solving the problem."],
+["The Hare and the Lion",3,"🐇","🦁","🪞","A lion terrorizes the animals. A small hare decides to use the lion's own assumptions against him.","Challenge the lion physically","Matching strength with strength ignores the hare's real advantage.","Use the lion's fear and reflection","A clever plan redirects the lion's power against itself.","Tell the lion everyone is stronger","An unsupported claim is unlikely to change behavior."],
+["The Brahmin and the Mongoose",3,"👨","🦫","🩸","A parent returns home and sees blood near a protective mongoose. A split-second interpretation becomes dangerous.","Act on the first impression","A frightening clue can feel conclusive when it is not.","Check what actually happened","A moment of verification can prevent an irreversible mistake.","Assume the worst","Fear fills missing evidence with the story we expect."],
+["The Jackal and the Drum",3,"🦊","🥁","🌳","A jackal hears a terrifying booming sound in the forest and imagines a monster.","Run without investigating","Fear grows when imagination supplies the missing facts.","Approach carefully and inspect the source","The scary sound turns out to be an empty drum moved by the wind.","Attack the sound","Fighting an unknown threat without understanding it wastes energy."],
+
+["The Monkey and the Crocodile's Second Test",4,"🐒","🐊","🍉","After escaping once, the monkey meets the crocodile again. Trust has changed and the stakes are higher.","Forget the past completely","Ignoring previous evidence makes the same danger easier to repeat.","Use what you learned","Experience becomes useful when it changes the next decision.","Take revenge immediately","Revenge can create another trap."],
+["The Greedy Dog",4,"🐕","🐕","🌉","A dog carrying food sees his reflection in water and imagines another dog with a larger prize.","Grab the second prize","Greed makes the dog risk the food already secured.","Protect what you already have","The dog keeps the certain gain instead of gambling it for an illusion.","Drop everything and chase the reflection","An imagined gain can destroy a real one."],
+["The Fisherman and the Little Fish",4,"🎣","🐟","🪣","A fisherman catches a small fish that promises a bigger future catch if released.","Accept every promise","A promised future gain is not guaranteed.","Weigh the certain gain against the uncertain one","Good decisions compare what is real now with what is merely promised.","Take the promise as fact","Wishful thinking is not evidence."],
+["The Foolish Weaver",4,"🧵","👑","🪡","A weaver imagines wealth and status from a plan that exists only in his head.","Act on the imagined fortune","Plans become dangerous when imagination is mistaken for reality.","Test the plan with small steps","Small experiments reveal whether an attractive idea can actually work.","Tell everyone the fortune is certain","Confidence does not create evidence."],
+["The Camel and the Lion",4,"🐫","🦁","🏜️","A camel joins a group of predators and later discovers that loyalty becomes fragile when resources are scarce.","Assume loyalty is permanent","Relationships can change when incentives change.","Understand incentives before trusting","Seeing the pressures around a decision makes betrayal less surprising.","Ignore the warning signs","Ignored incentives eventually become consequences."],
+
+["The Brahmin and the Goat",5,"👨","🐐","🧺","A group of tricksters repeatedly tells a Brahmin that his goat is something shameful until he doubts his own eyes.","Trust repeated claims","Repetition can create false confidence.","Check the evidence yourself","Independent verification protects against coordinated deception.","Change your belief every time","Constantly outsourcing judgment makes manipulation easy."],
+["The Monkey and the Wedge",5,"🐒","👷","🪵","A dangerous mechanism looks simple. The monkey sees a moving part and wants to touch it.","Experiment without understanding","An interesting object is not automatically a safe experiment.","Observe cause and effect first","Understanding the mechanism prevents avoidable harm.","Copy another monkey","Imitation does not remove the risk."],
+["The Potter's Dream",5,"🏺","💭","💰","A poor potter imagines a chain of success from one small opportunity and begins planning the rewards before securing the first step.","Celebrate the imagined outcome","Planning the reward before earning it confuses possibility with reality.","Secure the next real step","Progress is built from tested steps, not imagined leaps.","Borrow against the dream","Future success cannot safely repay a present debt."],
+["The Foolish Brahmin and the Mongoose",5,"👨","🦫","⚔️","A protector acts after seeing a frightening sign without checking the full scene.","Strike first","Immediate action can become irreversible before the facts are known.","Pause, inspect, then act","A short verification step can prevent a permanent mistake.","Ask someone to confirm the rumor","Confirmation is useful only if the person checks the actual evidence."],
+["The Hare and the Tortoise of Judgment",5,"🐇","🐢","⏳","Two animals face a difficult choice. One wants speed; the other wants certainty.","Choose speed automatically","Fast is not always effective.","Match the method to the problem","Wise action depends on context, not a single favorite habit.","Choose caution automatically","Slow is not always wise either; excessive delay can also cost opportunities."]
+];
+
+const $=id=>document.getElementById(id);
+let idx=0,wisdom=0,done=0,active=false;
+const state={};
+
+function renderBooks(){
+  $("books").innerHTML=books.map(b=>`<button class="book" data-book="${b.id}"><div class="num">BOOK ${b.id}</div><h3>${b.icon} ${b.name}</h3><p>${b.desc}</p></button>`).join("");
+  document.querySelectorAll("[data-book]").forEach(b=>b.addEventListener("click",()=>openBook(+b.dataset.book)));
+}
+function renderList(filter=null){
+  const list=filter?stories.filter(s=>s[1]===filter):stories;
+  $("storyList").innerHTML=list.map((s,n)=>`<button class="storyCard" data-story="${stories.indexOf(s)}"><div class="thumb">${s[2]}${s[3]}</div><div><h3>${s[0]}</h3><p>${books[s[1]-1].name} · visual decision scene</p></div><span class="lock">${state[stories.indexOf(s)]?"✓":"›"}</span></button>`).join("");
+  document.querySelectorAll("[data-story]").forEach(c=>c.addEventListener("click",()=>startStory(+c.dataset.story)));
+}
+function openBook(id){renderList(id);document.querySelector(".sectionTitle + .storyList")?.scrollIntoView({behavior:"smooth"});}
+function startStory(n){idx=n;active=true;$("home").classList.add("hidden");$("game").classList.add("active");renderScene();window.scrollTo({top:0,behavior:"smooth"});}
+function renderScene(){
+ const s=stories[idx],b=books[s[1]-1]; $("counter").textContent=`${idx+1} / ${stories.length}`;$("bar").style.width=((idx)/stories.length*100)+"%";
+ $("bookTag").textContent=`BOOK ${s[1]} · ${b.name}`;$("storyTitle").textContent=s[0];$("setup").textContent=s[5];
+ $("char1").textContent=s[2];$("char2").textContent=s[3];$("prop").textContent=s[4];
+ $("result").classList.remove("show");$("continue").classList.remove("show");$("choices").innerHTML="";
+ const options=[
+   {label:"Observe & verify",desc:s[6],out:s[7],text:s[8],good:true},
+   {label:"Act on instinct",desc:s[9],out:s[10],text:s[11],good:false},
+   {label:"Try another approach",desc:s[12],out:s[13],text:s[14],good:false}
+ ];
+ options.forEach((o,i)=>{const btn=document.createElement("button");btn.className="choice";btn.innerHTML=`<b>${["A","B","C"][i]} · ${o.label}</b><span>${o.desc}</span>`;btn.addEventListener("click",()=>choose(o));$("choices").appendChild(btn);});
+}
+function choose(o){
+ $("resultTitle").textContent=o.out;$("resultText").textContent=o.text;$("result").classList.add("show");$("continue").classList.add("show");
+ if(o.good){wisdom+=10;$("result").style.borderColor="#4e9c78";$("resultTitle").textContent="✨ Wisdom gained · "+o.out;}
+ else{$("result").style.borderColor="#7d4a47";}
+ $("wisdom").textContent=wisdom;
+ document.querySelectorAll(".choice").forEach(b=>b.disabled=true);
+}
+$("continue").addEventListener("click",()=>{
+ state[idx]=true;done=Object.keys(state).length;$("done").textContent=done;renderList();
+ if(idx<stories.length-1){idx++;renderScene();window.scrollTo({top:0,behavior:"smooth"});}
+ else{$("bar").style.width="100%";$("resultTitle").textContent="🏆 Journey complete";$("resultText").textContent=`You explored ${stories.length} visual stories and earned ${wisdom} wisdom points. Return to the library to replay any story.`;$("continue").classList.remove("show");}
+});
+$("start").addEventListener("click",()=>startStory(0));
+$("back").addEventListener("click",()=>{$("game").classList.remove("active");$("home").classList.remove("hidden");renderList();window.scrollTo({top:0,behavior:"smooth"});});
+renderBooks();renderList();$("wisdom").textContent=wisdom;$("done").textContent=done;
+</script>
+</body>
+</html>
